@@ -1,9 +1,9 @@
 # Create Plot1 -- A frequency histogram of Global active power
 #
 # First the data are read into hpc from household_power_consumption.txt in the working directory
-# Visual inspection shows that the required dates are all within the first 100000 rows.
+# Then filtered to the required dates.
 
-hpc <- read.csv("household_power_consumption.txt", sep=";", nrows=100000,  stringsAsFactors=FALSE)
+hpc <- read.csv("household_power_consumption.txt", sep=";", stringsAsFactors=FALSE)
 hpc <- hpc[hpc$Date=="1/2/2007" | hpc$Date=="2/2/2007",]
 
 data <- as.numeric(hpc[,"Global_active_power"])
